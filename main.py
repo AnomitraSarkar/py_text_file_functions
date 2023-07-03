@@ -59,8 +59,17 @@ def append_text_file(filename):
     pass
 
 
-def append_csv_file(filename):
-    pass
+def append_csv_file(filename, content):
+    '''
+    The function takes in Filename which if doesn't exists returns false and if exists writes the 2d content parameter provided in the end of the file and appends it.
+    '''
+    if os.path.isfile(filename):
+        with open(filename, "a", newline='\n') as f:
+            csv_writer = csv.writer(f)
+            csv_writer.writerows(content)
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":
