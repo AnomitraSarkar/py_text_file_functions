@@ -1,6 +1,7 @@
 import os
 import csv
 
+
 def read_csv_file(filename):
     '''
     The function takes a filename as input and checks if the files exists,
@@ -21,10 +22,20 @@ def read_csv_file(filename):
 def read_text_file(filename):
     pass
 
+
 def write_text_file(filename):
     pass
 
+
 def write_csv_file(filename):
+    pass
+
+
+def append_text_file(filename):
+    pass
+
+
+def append_csv_file(filename):
     pass
 
 
@@ -35,7 +46,9 @@ if __name__ == "__main__":
         print("2. Read Text Files")
         print("3. Write Csv Files")
         print("4. Write Text Files")
-        print("5. Exit")
+        print("5. Append Csv Files")
+        print("6. Append Text Files")
+        print("7. Exit")
         option = int(input("Enter your choice (1-5) : "))
         filename = input("Enter filename: ")
         if option == 1:
@@ -47,6 +60,10 @@ if __name__ == "__main__":
         elif option == 4:
             print(write_text_file(filename))
         elif option == 5:
+            print(append_csv_file(filename))
+        elif option == 6:
+            print(append_text_file(filename))
+        elif option == 7:
             break
         else:
             print("Wrong Option selected, Try again...")
