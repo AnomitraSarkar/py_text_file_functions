@@ -33,8 +33,20 @@ def write_text_file(filename):
     pass
 
 
-def write_csv_file(filename):
-    pass
+def write_csv_file(filename, content):
+    '''
+    The function takes a filename and content that is a collection of input rows for the csv files,
+    the file will be created if it does not exist
+    if the data is added/overwritten in the file, it returns True
+    otherwise if any error encountered then it return False
+    '''
+    try:
+        with open(filename, "w", newline='\n') as f:
+            csv_writer = csv.writer(f)
+            csv_writer.writerows(content)
+        return True
+    except:
+        return False
 
 
 def append_text_file(filename):
