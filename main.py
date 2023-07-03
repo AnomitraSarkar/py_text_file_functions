@@ -105,13 +105,17 @@ if __name__ == "__main__":
         elif option == 2:
             print(read_text_file(filename))
         elif option == 3:
-            print(write_csv_file(filename))
+            data = eval(input("Enter your data in 2d list format: "))
+            print(write_csv_file(filename, data))
         elif option == 4:
-            print(write_text_file(filename))
+            data = input("Enter your text data: ")
+            print(write_text_file(filename, data))
         elif option == 5:
-            print(append_csv_file(filename))
+            data = eval(input("Enter your data in 2d list format: "))
+            print(append_csv_file(filename, data))
         elif option == 6:
-            print(append_text_file(filename))
+            data = input("Enter your text data: ")
+            print(append_text_file(filename, data))
         elif option == 7:
             break
         else:
