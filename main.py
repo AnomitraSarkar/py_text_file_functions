@@ -20,6 +20,11 @@ def read_csv_file(filename):
 
 
 def read_text_file(filename):
+    ''' 
+    The function takes a filename as input and checks if the files exist,
+    if it exists, it returns the data,
+    otherwise it returns none
+    '''
     if os.path.isfile(filename):
         f = open(filename)
         data = f.read()
@@ -29,14 +34,17 @@ def read_text_file(filename):
     return data
 
 
-def write_text_file(filename):
+def write_text_file(filename, data):
+    '''
+    The function takes a filename as input and data as the argument,
+    and tries to open the file in write mode and handles the exception
+    '''
     try:
         with open(filename, 'w') as f:
             f.write(data)
         return True
     except:
         return False
-    pass
 
 
 def write_csv_file(filename, content):
@@ -55,9 +63,17 @@ def write_csv_file(filename, content):
         return False
 
 
-def append_text_file(filename):
-    pass
-
+def append_text_file(filename, data):
+    '''
+    The function takes a filename as input and data as the argument,
+    and tries to open the file in append mode and handles the exception
+    '''
+    try:
+        with open(filename, 'a') as f:
+            f.write(data)
+        return True
+    except:
+        return False
 
 def append_csv_file(filename, content):
     '''
