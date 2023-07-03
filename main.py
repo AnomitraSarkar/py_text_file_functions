@@ -20,7 +20,13 @@ def read_csv_file(filename):
 
 
 def read_text_file(filename):
-    pass
+    if os.path.isfile(filename):
+        f = open(filename)
+        data = f.read()
+        f.close()
+    else:
+        data = None
+    return data
 
 
 def write_text_file(filename):
