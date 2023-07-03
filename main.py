@@ -30,6 +30,12 @@ def read_text_file(filename):
 
 
 def write_text_file(filename):
+    try:
+        with open(filename, 'w') as f:
+            f.write(data)
+        return True
+    except:
+        return False
     pass
 
 
